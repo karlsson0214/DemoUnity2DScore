@@ -49,4 +49,13 @@ public class Crab : MonoBehaviour
             rb.velocity = Vector2.zero;
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.name == "Worm")
+        {
+            score = score + 1;
+            scoreDisplay.text = "Score: " + score;
+        }
+    }
 }
