@@ -20,6 +20,8 @@ public class Crab : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         // Physics engine will not turn Crab
         rb.freezeRotation = true;
+        // no gravity
+        rb.gravityScale = 0;
     }
 
     // Update is called once per frame
