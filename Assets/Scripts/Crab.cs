@@ -52,8 +52,12 @@ public class Crab : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name == "Worm")
+        if (collision.gameObject.name.StartsWith("Worm"))
         {
+            // remove worm
+            Destroy(collision.gameObject);
+
+            // score
             score = score + 1;
             scoreDisplay.text = "Score: " + score;
         }
